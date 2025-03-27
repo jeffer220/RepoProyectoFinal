@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.GestionDeEstadoDeTicketsControlador">
+   <children>
+      <Label layoutX="210.0" layoutY="14.0" text="Gestion De Estado De Tickets">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="236.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleDefinirEstadoTicket" text="Definir Nuevo Estado" />
+      <Button layoutX="223.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleModificarEstadoTicket" text="Modificar Estado Existente" />
+      <Button layoutX="227.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleEliminarEstadoTicket" text="Eliminar Estado Existente" />
+      <Button layoutX="491.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleBtnRegresar" text="Regresar" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.OpcionesControlador">
+   <children>
+      <Button layoutX="82.0" layoutY="46.0" mnemonicParsing="false" onAction="#handleConfiguracionSistema" prefHeight="29.0" prefWidth="187.0" text="Configuracion Del Sitema" />
+      <Button layoutX="332.0" layoutY="46.0" mnemonicParsing="false" onAction="#handleGestionPermisosRoles" prefHeight="29.0" prefWidth="187.0" text="Gestion de Roles y Permisos" />
+      <Button layoutX="82.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleGestionDepartamentos" prefHeight="29.0" prefWidth="187.0" text="Gestion de Departamentos" />
+      <Button layoutX="332.0" layoutY="88.0" mnemonicParsing="false" onAction="#handleGestionDeEstadoTickets" prefHeight="29.0" prefWidth="187.0" text="Gestion de Estado Tickets" />
+      <Button layoutX="269.0" layoutY="338.0" mnemonicParsing="false" onAction="#handleBotonRegresar" text="Regresar" />
+      <Label layoutX="285.0" layoutY="14.0" text="Menu">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="82.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleGestionUsuarios" prefHeight="29.0" prefWidth="187.0" text="Gestion De Usuarios" />
+      <Button layoutX="332.0" layoutY="130.0" mnemonicParsing="false" onAction="#handleGestionFlujosDeTrabajo" prefHeight="29.0" prefWidth="187.0" text="Gestion De Flujos De Trabajo" />
+      <Button layoutX="82.0" layoutY="171.0" mnemonicParsing="false" onAction="#handleGestionDeTickets" prefHeight="29.0" prefWidth="187.0" text="Gestion De Tickets" />
+   </children>
+</AnchorPane>

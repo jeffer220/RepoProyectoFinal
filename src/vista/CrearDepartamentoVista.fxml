@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.CrearDepartamentoControlador">
+   <children>
+      <Label layoutX="187.0" layoutY="14.0" text="Crear Departamento">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="55.0" layoutY="65.0" text="Nombre Del Departamento" />
+      <TextField layoutX="17.0" layoutY="89.0" prefHeight="25.0" prefWidth="220.0" />
+      <Label layoutX="96.0" layoutY="125.0" text="Descripcion" />
+      <TextField layoutX="17.0" layoutY="152.0" prefHeight="71.0" prefWidth="220.0" />
+      <Button layoutX="339.0" layoutY="348.0" mnemonicParsing="false" text="Guardar" />
+      <Button layoutX="430.0" layoutY="348.0" mnemonicParsing="false" onAction="#handleBotonCancelar" text="Cancelar" />
+      <Label layoutX="83.0" layoutY="229.0" text="Tecnicos Disponibles" />
+      <ListView layoutX="21.0" layoutY="256.0" prefHeight="130.0" prefWidth="234.0" />
+   </children>
+</AnchorPane>

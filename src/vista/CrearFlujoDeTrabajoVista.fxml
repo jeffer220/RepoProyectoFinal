@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controlador.CrearFlujoDeTrabajoControlador">
+   <children>
+      <Label layoutX="209.0" layoutY="14.0" text="Crear Nuevo Flujo De Trabajo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="253.0" layoutY="47.0" text="Nombre Del Flujo" />
+      <TextField layoutX="226.0" layoutY="73.0" />
+      <Label layoutX="169.0" layoutY="122.0" text="Seleccione los Estados que forman parte del Flujo" />
+      <ListView layoutX="200.0" layoutY="151.0" prefHeight="200.0" prefWidth="200.0" />
+      <Button layoutX="432.0" layoutY="339.0" mnemonicParsing="false" text="Guardar" />
+      <Button layoutX="515.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleBtnRegresar" text="Cancelar" />
+   </children>
+</AnchorPane>

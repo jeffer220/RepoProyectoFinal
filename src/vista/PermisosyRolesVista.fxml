@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="503.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.PermisosyRolesControlador">
+   <children>
+      <Label layoutX="186.0" layoutY="4.0" prefHeight="20.0" prefWidth="229.0" text="           Gestion de Permisos y Roles" textAlignment="CENTER" />
+      <Label layoutX="83.0" layoutY="30.0" text="Permisos" />
+      <Label layoutX="14.0" layoutY="57.0" text="Seleccionar permisos que se desean asignar" />
+      <Button layoutX="20.0" layoutY="83.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Crear Tickets" />
+      <Button layoutX="145.0" layoutY="83.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Ver Tickets" />
+      <Button layoutX="20.0" layoutY="128.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Editar Tickets" />
+      <Button layoutX="145.0" layoutY="128.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Eliminar Tickets" />
+      <Button layoutX="20.0" layoutY="170.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" text="Asignar Tickets" />
+      <Button layoutX="140.0" layoutY="170.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Cambiar Estado Ticket" />
+      <Button layoutX="64.0" layoutY="213.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Agregar notas a ticket" />
+      <Button layoutX="64.0" layoutY="255.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="135.0" text="Gestionar Usuarios" />
+      <Button layoutX="55.0" layoutY="293.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="154.0" text="Gestionar Departamentos" />
+      <Button layoutX="52.0" layoutY="329.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="161.0" text="Gestionar Flujos de trabajo" />
+      <Button layoutX="26.0" layoutY="365.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="211.0" text="Configurar parametros del sistema" />
+      <Button layoutX="63.0" layoutY="413.0" mnemonicParsing="false" onAction="#handleBTNCrearPermiso" prefHeight="25.0" prefWidth="135.0" text="Crear nuevo permiso" />
+      <Button layoutX="408.0" layoutY="445.0" mnemonicParsing="false" text="Guardar" />
+      <Label layoutX="457.0" layoutY="30.0" text="Roles" />
+      <Label layoutX="401.0" layoutY="66.0" text="Seleccione un rol existente" />
+      <Button layoutX="401.0" layoutY="115.0" mnemonicParsing="false" text="Tecnico" />
+      <Button layoutX="486.0" layoutY="115.0" mnemonicParsing="false" text="Usuario" />
+      <Button layoutX="359.0" layoutY="170.0" mnemonicParsing="false" onAction="#handleBTNCrearRol" text="Crear nuevo rol" />
+      <Button layoutX="486.0" layoutY="170.0" mnemonicParsing="false" onAction="#handleBTNModificarRol" prefHeight="25.0" prefWidth="98.0" text="Modificar rol" />
+      <Button layoutX="423.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleBTNEliminarRol" prefHeight="25.0" prefWidth="98.0" text="Eliminar rol" />
+      <Button layoutX="504.0" layoutY="445.0" mnemonicParsing="false" onAction="#handleBotonCancelar" text="Cancelar" />
+   </children>
+</AnchorPane>
