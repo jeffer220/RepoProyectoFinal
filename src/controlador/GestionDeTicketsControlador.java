@@ -40,7 +40,20 @@ public class GestionDeTicketsControlador implements Initializable {
     
     }
     
+    @FXML
+    private void handleColaDeAtencion(ActionEvent event) {
+        try {
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("/vista/ColaDeAtencionTicketsVista.fxml"));
+            Parent root = loader.load();
+            
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(GestionDeTicketsControlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     
+    }    
     
     
     @FXML
