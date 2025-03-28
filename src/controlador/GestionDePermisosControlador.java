@@ -23,52 +23,35 @@ import javafx.stage.Stage;
  *
  * @author gp
  */
-public class PermisosyRolesControlador implements Initializable {
+public class GestionDePermisosControlador implements Initializable {
 
-       @FXML
-    private void handleBotonCancelar(ActionEvent event) {
+    @FXML
+    private void handleBTNAgregarPermiso(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/OpcionesVista.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/CrearPermisoVista.fxml"));
             Parent root = loader.load();
             
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(PermisosyRolesControlador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GestionDePermisosControlador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
         @FXML
-    private void handleGestionPermisos(ActionEvent event) {
+    private void handlebtnRegresar(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/GestionDePermisosVista.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PermisosyRolesVista.fxml"));
             Parent root = loader.load();
             
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(PermisosyRolesControlador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GestionDePermisosControlador.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }   
-
-        @FXML
-    private void handleGestionRoles(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/GestionDeRolesVista.fxml"));
-            Parent root = loader.load();
-            
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(PermisosyRolesControlador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }    
-
-    
-
+    } 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

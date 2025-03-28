@@ -23,64 +23,63 @@ import javafx.stage.Stage;
  *
  * @author gp
  */
-public class GestionDeTicketsControlador implements Initializable {
+public class GestionDeRolesControlador implements Initializable {
 
-    @FXML
-    private void handleCrearTicket(ActionEvent event) {
+
+    
+        @FXML
+    private void handlebtnRegresar(ActionEvent event) {
         try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("/vista/CrearNuevoTicketVista.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/PermisosyRolesVista.fxml"));
             Parent root = loader.load();
             
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(GestionDeTicketsControlador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GestionDeRolesControlador.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }   
     
+        @FXML
+    private void handleBTNCrearRol(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/CrearRolVista.fxml"));
+            Parent root = loader.load();
+            
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(GestionDeRolesControlador.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
-    @FXML
-    private void handleColaDeAtencion(ActionEvent event) {
+            @FXML
+    private void handleBTNModificarRol(ActionEvent event) {
         try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("/vista/ColaDeAtencionTicketsVista.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/ModificarRolVista.fxml"));
             Parent root = loader.load();
             
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(GestionDeTicketsControlador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GestionDeRolesControlador.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
     
-    }    
- 
-    @FXML
-    private void handleActualizacionTicket(ActionEvent event) {
+        @FXML
+    private void handleBTNEliminarRol(ActionEvent event) {
         try {
-            FXMLLoader loader= new FXMLLoader(getClass().getResource("/vista/ActualizacionTicketVista.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/EliminarRolVista.fxml"));
             Parent root = loader.load();
             
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(GestionDeTicketsControlador.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    
-    }     
-    
-    @FXML
-    private void handleBtnCancelar(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/OpcionesVista.fxml"));
-            Parent root = loader.load();
-            
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(EliminarFlujoDeTrabajoControlador.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(GestionDeRolesControlador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
