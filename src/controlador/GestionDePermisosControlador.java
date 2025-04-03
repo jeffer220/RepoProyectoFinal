@@ -4,6 +4,8 @@
  */
 package controlador;
 
+import java.awt.Button;
+import java.awt.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,6 +26,15 @@ import javafx.stage.Stage;
  * @author gp
  */
 public class GestionDePermisosControlador implements Initializable {
+    
+    
+    @FXML
+    private TextField textPermisosExistentes;
+    @FXML
+    private Button buttonCrearNuevoPermiso;
+    @FXML
+    private Button buttonRegresar;
+    
 
     @FXML
     private void handleBTNAgregarPermiso(ActionEvent event) {

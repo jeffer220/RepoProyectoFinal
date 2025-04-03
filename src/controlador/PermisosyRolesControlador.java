@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import java.awt.Button;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,6 +25,13 @@ import javafx.stage.Stage;
  * @author gp
  */
 public class PermisosyRolesControlador implements Initializable {
+    
+    
+    @FXML
+   private Button buttonGestionPermisos;
+    @FXML
+    private Button buttonGestionRoles;
+    
 
        @FXML
     private void handleBotonCancelar(ActionEvent event) {

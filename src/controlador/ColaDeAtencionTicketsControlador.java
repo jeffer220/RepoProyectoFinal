@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import java.awt.Button;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
@@ -25,6 +27,17 @@ import javafx.stage.Stage;
  */
 public class ColaDeAtencionTicketsControlador implements Initializable {
 
+    @FXML
+    private ListView listaDepartamentos;
+    @FXML
+    private ListView listaTicketsDisponibles;
+    @FXML
+    private ListView listaCambiarEstadoTicket;
+    @FXML
+    private Button buttonGuardar;
+    @FXML
+    private Button buttonCancelar;
+    
     @FXML
     private void handleBtnCancelar(ActionEvent event) {
         try {

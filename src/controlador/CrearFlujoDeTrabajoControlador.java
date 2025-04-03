@@ -4,6 +4,8 @@
  */
 package controlador;
 
+import java.awt.Button;
+import java.awt.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +18,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +27,16 @@ import javafx.stage.Stage;
  * @author gp
  */
 public class CrearFlujoDeTrabajoControlador implements Initializable {
+    
+    @FXML
+    private TextField textNombreFlujo;
+    @FXML
+    private ListView listaEstadosDeFlujo;
+    @FXML
+    private Button buttonGuardar;
+    @FXML
+    private Button buttonCancelar;
+    
 
     @FXML
     private void handleBtnRegresar(ActionEvent event) {

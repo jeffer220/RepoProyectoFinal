@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="637.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controlador.GestionDeRolesControlador">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="637.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.GestionDeRolesControlador">
    <children>
       <Label layoutX="195.0" layoutY="14.0" text="Asignacion De Permisos a Roles">
          <font>
@@ -15,13 +14,13 @@
          </font>
       </Label>
       <Label layoutX="125.0" layoutY="55.0" text="Roles Existentes" />
-      <ListView layoutX="33.0" layoutY="78.0" prefHeight="115.0" prefWidth="268.0" />
+      <ListView fx:id="listRolesExistentes" layoutX="33.0" layoutY="78.0" prefHeight="115.0" prefWidth="268.0" />
       <Label layoutX="371.0" layoutY="55.0" text="Seleccione permisos existentes para asignar" />
-      <ListView layoutX="353.0" layoutY="81.0" prefHeight="115.0" prefWidth="268.0" />
-      <Button layoutX="461.0" layoutY="323.0" mnemonicParsing="false" text="Guardar" />
-      <Button layoutX="541.0" layoutY="323.0" mnemonicParsing="false" onAction="#handlebtnRegresar" text="Cancelar" />
-      <Button layoutX="116.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleBTNCrearRol" text="Crear Nuevo Rol" />
-      <Button layoutX="124.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleBTNModificarRol" text="Modificar Rol" />
-      <Button layoutX="128.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleBTNEliminarRol" text="Eliminar Rol" />
+      <ListView fx:id="listPermisosExistentes" layoutX="353.0" layoutY="81.0" prefHeight="115.0" prefWidth="268.0" />
+      <Button fx:id="buttonGuardar" layoutX="461.0" layoutY="323.0" mnemonicParsing="false" text="Guardar" />
+      <Button fx:id="buttonCancelar" layoutX="541.0" layoutY="323.0" mnemonicParsing="false" onAction="#handlebtnRegresar" text="Cancelar" />
+      <Button fx:id="buttonCrearRol" layoutX="116.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleBTNCrearRol" text="Crear Nuevo Rol" />
+      <Button fx:id="buttonModRol" layoutX="124.0" layoutY="252.0" mnemonicParsing="false" onAction="#handleBTNModificarRol" text="Modificar Rol" />
+      <Button fx:id="buttonEliminarRol" layoutX="128.0" layoutY="290.0" mnemonicParsing="false" onAction="#handleBTNEliminarRol" text="Eliminar Rol" />
    </children>
 </AnchorPane>

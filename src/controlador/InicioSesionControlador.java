@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import java.awt.Button;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,8 +15,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.scene.control.PasswordField;
 
 public class InicioSesionControlador {
+    
+    
+    @FXML
+    private PasswordField passwordContraseña;
+    @FXML
+    private Button buttonContinuar;
+    
 
     @FXML
     private void handleAceptarButton(ActionEvent event) {

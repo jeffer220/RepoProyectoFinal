@@ -17,10 +17,10 @@
       <Label layoutX="87.0" layoutY="73.0" text="Nombre Del Estado" />
       <Label layoutX="108.0" layoutY="132.0" text="Estado Final" />
       <Label layoutX="59.0" layoutY="192.0" prefHeight="17.0" prefWidth="163.0" text="Estado Permitidos Siguientes" />
-      <TextField layoutX="226.0" layoutY="69.0" />
-      <Label layoutX="282.0" layoutY="132.0" text="Si / No" />
-      <ListView layoutX="228.0" layoutY="200.0" prefHeight="109.0" prefWidth="183.0" />
-      <Button layoutX="516.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleBtnRegresar" text="Regresar" />
-      <Button layoutX="411.0" layoutY="351.0" mnemonicParsing="false" text="Guardar" />
+      <TextField fx:id="textNombreEstado" layoutX="226.0" layoutY="69.0" />
+      <Label fx:id="labelEstadoFinal" layoutX="282.0" layoutY="132.0" text="Si / No" />
+      <ListView fx:id="listaEstadoPermitidos" layoutX="228.0" layoutY="200.0" prefHeight="109.0" prefWidth="183.0" />
+      <Button fx:id="buttonRegresar" layoutX="516.0" layoutY="351.0" mnemonicParsing="false" onAction="#handleBtnRegresar" text="Regresar" />
+      <Button fx:id="buttonGuardar" layoutX="411.0" layoutY="351.0" mnemonicParsing="false" text="Guardar" />
    </children>
 </AnchorPane>

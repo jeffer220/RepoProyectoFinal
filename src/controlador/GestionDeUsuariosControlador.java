@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import java.awt.Button;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,7 +25,15 @@ import javafx.stage.Stage;
  * @author gp
  */
 public class GestionDeUsuariosControlador implements Initializable {
-
+    
+    
+    @FXML
+    private Button buttonRegistrarUsuario;
+    @FXML
+    private Button buttonModUsuario;
+    @FXML
+    private Button buttonDesactivarUsuarios;
+    
 
     @FXML
     private void handleRegistrarNuevoUsuario(ActionEvent event) {

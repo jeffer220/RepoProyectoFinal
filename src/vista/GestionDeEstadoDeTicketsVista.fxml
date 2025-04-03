@@ -12,9 +12,9 @@
             <Font size="14.0" />
          </font>
       </Label>
-      <Button layoutX="236.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleDefinirEstadoTicket" text="Definir Nuevo Estado" />
-      <Button layoutX="223.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleModificarEstadoTicket" text="Modificar Estado Existente" />
-      <Button layoutX="227.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleEliminarEstadoTicket" text="Eliminar Estado Existente" />
-      <Button layoutX="491.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleBtnRegresar" text="Regresar" />
+      <Button fx:id="buttonDefinirEstadoTicket" layoutX="236.0" layoutY="65.0" mnemonicParsing="false" onAction="#handleDefinirEstadoTicket" text="Definir Nuevo Estado" />
+      <Button fx:id="buttonModEstadoTicket" layoutX="223.0" layoutY="111.0" mnemonicParsing="false" onAction="#handleModificarEstadoTicket" text="Modificar Estado Existente" />
+      <Button fx:id="buttonEliminarEstadoTicket" layoutX="227.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleEliminarEstadoTicket" text="Eliminar Estado Existente" />
+      <Button fx:id="buttonRegresar" layoutX="491.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleBtnRegresar" text="Regresar" />
    </children>
 </AnchorPane>

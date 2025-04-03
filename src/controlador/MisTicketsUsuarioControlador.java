@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +25,9 @@ import javafx.stage.Stage;
  * @author gp
  */
 public class MisTicketsUsuarioControlador implements Initializable {
+    
+    @FXML
+    private ListView listaTicketsVisualizar;
 
         @FXML
     private void handlebtnRegresar(ActionEvent event) {

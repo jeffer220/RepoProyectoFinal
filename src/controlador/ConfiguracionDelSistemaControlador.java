@@ -4,6 +4,8 @@
  */
 package controlador;
 
+import java.awt.Button;
+import java.awt.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +18,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
@@ -24,6 +28,22 @@ import javafx.stage.Stage;
  * @author gp
  */
 public class ConfiguracionDelSistemaControlador implements Initializable {
+    
+    @FXML
+    private TextField textNombreEmpresa;
+    @FXML
+    private ListView listaIdiomas;
+    @FXML
+    private ListView listaZonaHoraria;
+    @FXML
+    private ListView listaVencimientoTickets;
+    @FXML
+    private ImageView imageLogoEmpresa;
+    @FXML
+    private Button buttonGuardar;
+    @FXML
+    private Button buttonCancelar;
+    
     
         @FXML
     private void handleBotonCancelar(ActionEvent event) {

@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import java.awt.Button;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,6 +25,15 @@ import javafx.stage.Stage;
  * @author gp
  */
 public class GestionDeTicketsControlador implements Initializable {
+    
+    
+    @FXML
+    private Button buttonCrearTicket;
+    @FXML
+    private Button buttonColaDeAtencionTickets;
+    @FXML
+    private Button buttonActualizacionTickets;
+    
 
     @FXML
     private void handleCrearTicket(ActionEvent event) {

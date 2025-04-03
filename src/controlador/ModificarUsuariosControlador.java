@@ -4,6 +4,8 @@
  */
 package controlador;
 
+import java.awt.Button;
+import java.awt.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,6 +26,23 @@ import javafx.stage.Stage;
  * @author gp
  */
 public class ModificarUsuariosControlador implements Initializable {
+    
+    
+    @FXML
+    private TextField textNombreNuevo;
+    @FXML
+    private TextField textCorreoNuevo;
+    @FXML
+    private TextField textNombreUsuarioNuevo;
+    @FXML
+    private TextField textContraNueva;
+    @FXML
+    private TextField textRolAsignadoNuevo;
+    @FXML
+    private TextField textDepartamentoNuevo;
+    @FXML
+    private Button buttonGuardar;
+    
 
 
     @FXML

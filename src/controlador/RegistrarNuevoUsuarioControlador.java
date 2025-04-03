@@ -4,6 +4,8 @@
  */
 package controlador;
 
+import java.awt.Button;
+import java.awt.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,6 +26,22 @@ import javafx.stage.Stage;
  * @author gp
  */
 public class RegistrarNuevoUsuarioControlador implements Initializable {
+    
+    
+    @FXML
+    private TextField textNombreCompleto;
+    @FXML
+    private TextField textCorreo;
+    @FXML
+    private TextField textNombreUsuario;
+    @FXML
+    private TextField textContraseña;
+    @FXML
+    private TextField textRol;
+    @FXML
+    private TextField textDepartamento;
+    @FXML
+    private Button buttonGuardar;
 
     @FXML
     private void handleBtnRegresar(ActionEvent event) {

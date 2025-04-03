@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import java.awt.Button;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -16,6 +17,30 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class OpcionesControlador {
+    
+    
+    @FXML
+    private Button buttonconfgSistema;
+    
+    @FXML
+    private Button buttonGestionDep;
+    
+    @FXML
+    private Button buttonGestionUsuarios;
+    
+    @FXML
+    private Button buttonGestionTickets;
+    
+    @FXML
+    private Button buttonGestionRolesPermisos;
+    
+    @FXML
+    private Button buttonGestionEstadoTickets;
+    
+    @FXML
+    private Button buttonGestionFlujos;
+    
+    
 
     @FXML
     private void handleConfiguracionSistema(ActionEvent event) {

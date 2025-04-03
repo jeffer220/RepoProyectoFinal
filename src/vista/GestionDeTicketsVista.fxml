@@ -12,9 +12,9 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Button layoutX="239.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleCrearTicket" text="Crear Nuevo Ticket" />
+      <Button fx:id="buttonCrearTicket" layoutX="239.0" layoutY="53.0" mnemonicParsing="false" onAction="#handleCrearTicket" text="Crear Nuevo Ticket" />
       <Button layoutX="501.0" layoutY="337.0" mnemonicParsing="false" onAction="#handleBtnCancelar" text="Regresar" />
-      <Button layoutX="244.0" layoutY="97.0" mnemonicParsing="false" onAction="#handleColaDeAtencion" text="Cola De Atencion" />
-      <Button layoutX="224.0" layoutY="136.0" mnemonicParsing="false" onAction="#handleActualizacionTicket" prefHeight="25.0" prefWidth="148.0" text="Actualizacion De Tickets" />
+      <Button fx:id="buttonColaDeAtencionTickets" layoutX="244.0" layoutY="97.0" mnemonicParsing="false" onAction="#handleColaDeAtencion" text="Cola De Atencion" />
+      <Button fx:id="buttonActualizacionTickets" layoutX="224.0" layoutY="136.0" mnemonicParsing="false" onAction="#handleActualizacionTicket" prefHeight="25.0" prefWidth="148.0" text="Actualizacion De Tickets" />
    </children>
 </AnchorPane>

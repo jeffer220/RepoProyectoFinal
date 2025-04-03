@@ -12,9 +12,9 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="228.0" layoutY="71.0" mnemonicParsing="false" onAction="#handleRegistrarNuevoUsuario" text="Registrar Nuevo Usuario" />
+      <Button fx:id="buttonRegistrarUsuario" layoutX="228.0" layoutY="71.0" mnemonicParsing="false" onAction="#handleRegistrarNuevoUsuario" text="Registrar Nuevo Usuario" />
       <Button layoutX="504.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleBotonRegresar" text="Regresar" />
-      <Button layoutX="228.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleModificarUsuario" prefHeight="25.0" prefWidth="145.0" text="Modificar Usuarios" />
-      <Button layoutX="228.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleDesactivarUsuarios" prefHeight="25.0" prefWidth="145.0" text="Desactivar Usuarios" />
+      <Button fx:id="buttonModUsuario" layoutX="228.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleModificarUsuario" prefHeight="25.0" prefWidth="145.0" text="Modificar Usuarios" />
+      <Button fx:id="buttonDesactivarUsuarios" layoutX="228.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleDesactivarUsuarios" prefHeight="25.0" prefWidth="145.0" text="Desactivar Usuarios" />
    </children>
 </AnchorPane>

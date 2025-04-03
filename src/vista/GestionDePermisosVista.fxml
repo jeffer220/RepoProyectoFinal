@@ -14,8 +14,8 @@
          </font>
       </Label>
       <Label layoutX="248.0" layoutY="49.0" text="Permisos Existentes" />
-      <ListView layoutX="119.0" layoutY="72.0" prefHeight="122.0" prefWidth="363.0" />
-      <Button layoutX="236.0" layoutY="218.0" mnemonicParsing="false" onAction="#handleBTNAgregarPermiso" text="Crear Nuevo Permiso" />
-      <Button layoutX="482.0" layoutY="337.0" mnemonicParsing="false" onAction="#handlebtnRegresar" text="Regresar" />
+      <ListView fx:id="textPermisosExistentes" layoutX="119.0" layoutY="72.0" prefHeight="122.0" prefWidth="363.0" />
+      <Button fx:id="buttonCrearNuevoPermiso" layoutX="236.0" layoutY="218.0" mnemonicParsing="false" onAction="#handleBTNAgregarPermiso" text="Crear Nuevo Permiso" />
+      <Button fx:id="buttonRegresar" layoutX="482.0" layoutY="337.0" mnemonicParsing="false" onAction="#handlebtnRegresar" text="Regresar" />
    </children>
 </AnchorPane>
