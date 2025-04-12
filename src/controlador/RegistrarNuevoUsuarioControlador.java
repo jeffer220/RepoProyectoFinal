@@ -4,8 +4,6 @@
  */
 package controlador;
 
-import java.awt.Button;
-import java.awt.TextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -18,6 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -26,7 +26,6 @@ import javafx.stage.Stage;
  * @author gp
  */
 public class RegistrarNuevoUsuarioControlador implements Initializable {
-    
     
     @FXML
     private TextField textNombreCompleto;
@@ -42,7 +41,16 @@ public class RegistrarNuevoUsuarioControlador implements Initializable {
     private TextField textDepartamento;
     @FXML
     private Button buttonGuardar;
-
+    @FXML
+    private Button buttonCrearUsuario;
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        //
+    }
+    
+      
+    
     @FXML
     private void handleBtnRegresar(ActionEvent event) {
         try {
@@ -55,11 +63,6 @@ public class RegistrarNuevoUsuarioControlador implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(RegistrarNuevoUsuarioControlador.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
     }    
     
 }
