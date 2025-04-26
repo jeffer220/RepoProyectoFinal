@@ -32,8 +32,7 @@ import modelo.GestionPermisos;
  */
 public class GestionDePermisosControlador implements Initializable {
     
-    @FXML
-    private ListView listaPermisosExistentes;
+    
     @FXML
     private Button buttonRegresar;
      @FXML
@@ -46,6 +45,8 @@ public class GestionDePermisosControlador implements Initializable {
     private Button buttonGuardar;
     @FXML
     private Button buttonCrearPermiso;
+    @FXML
+    private ListView listaPermisosExistentes;
     
     
     private static ObservableList<GestionPermisos> listaPermisos;
@@ -53,9 +54,11 @@ public class GestionDePermisosControlador implements Initializable {
     
          @Override
     public void initialize(URL url, ResourceBundle rb) {
-       listaPermisos = FXCollections.observableArrayList();
+        if (listaPermisos == null) { // Si la lista es null, inicializarla
+        listaPermisos = FXCollections.observableArrayList();
+    }
        
-        listaPermisos.addAll(
+       if (listaPermisos.isEmpty()) { listaPermisos.addAll(
         new GestionPermisos("Crear tickets", "Permiso para crear nuevos tickets"),
         new GestionPermisos("Ver tickets", "Permiso para visualizar tickets"),
         new GestionPermisos("Editar tickets", "Permiso para modificar detalles de tickets"),
@@ -68,9 +71,14 @@ public class GestionDePermisosControlador implements Initializable {
         new GestionPermisos("Gestionar flujos de trabajo", "Permiso para configurar flujos de trabajo"),
         new GestionPermisos("Configurar parámetros del sistema", "Permiso para ajustar configuraciones")
     );
+       }
        listaPermisosExistentes.setItems(listaPermisos); // Vincular la lista con el ListView
     }
     
+     // Método público para acceder a la lista desde otro controlador
+    public static ObservableList<GestionPermisos> getListaPermisos() {
+        return listaPermisos;
+    }  
     
     @FXML
     public void CrearPermiso(ActionEvent event){
@@ -86,37 +94,9 @@ public class GestionDePermisosControlador implements Initializable {
         listaPermisosExistentes.setItems(listaPermisos); // Actualizar la vista
 
     }
-
-    public static ObservableList<GestionPermisos> getListaPermisos() {
-        return listaPermisos;
-    }
-    
-    
-   
-    
-    
-    /*
-    
-    private void permisosExistentes() {
-    String[] permisos2 = {
-        "Crear tickets", "Ver tickets", "Editar tickets", "Eliminar tickets",
-        "Asignar tickets", "Cambiar estado de tickets", "Agregar notas a tickets",
-        "Gestionar usuarios", "Gestionar departamentos", "Gestionar flujos de trabajo",
-        "Configurar parámetros del sistema"
-    };
-
-    listaPermisosExistentes.getItems().addAll(permisos2);
-}    
-       
-     @FXML
-    public void asignarPermisos() {
-        // Obtener los permisos seleccionados
-        var seleccionados = listaPermisosExistentes.getSelectionModel().getSelectedItems();
         
-        System.out.println("Permisos asignados: " + seleccionados);
-        // Aquí puedes guardar estos permisos en el modelo de datos o base de datos
-    }
-    */
+    
+  
     
         @FXML
     private void handlebtnRegresar(ActionEvent event) {
@@ -132,25 +112,6 @@ public class GestionDePermisosControlador implements Initializable {
         }
     } 
     
-    
-    
-    
-   /* @FXML
-    public void ingresarNombrePermiso(){
-        String nombrePermiso = textNombrePermiso.getText() ;
-        
-    if (nombrePermiso == null || nombrePermiso.isEmpty()) {
-        labelError.setText("Error: El nombre del permisono puede estar vacio.");
-        return;
-    } 
-    if (nombrePermiso.length() < 3 || nombrePermiso.length() > 50) {
-        labelError.setText("Error: El nombre del permiso debe tener entre 3 y 50caracteres");
-        return;
-    } 
-        gestionPermiso.setNombrePermiso(nombrePermiso);
-        textNombrePermiso.setText(nombrePermiso);
-    }
-    */
 }
 
   

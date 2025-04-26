@@ -4,6 +4,7 @@
  */
 package controlador;
 
+import controlador.GestionDePermisosControlador;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -34,14 +35,15 @@ import modelo.GestionRoles;
 public class GestionDeRolesControlador implements Initializable {
     
     
+
     @FXML
     private ListView listRolesExistentes;
     @FXML
     private Button buttonModRol;
     @FXML
     private Button buttonEliminarRol;
-    //@FXML
-    //private ListView listPermisosExistentes;
+    @FXML
+    private ListView listPermisosExistentes;
     @FXML
     private Button buttonGuardar;
     @FXML
@@ -55,14 +57,34 @@ public class GestionDeRolesControlador implements Initializable {
     private Label labelError;
     
     private ObservableList<GestionRoles> listaRoles;
-    
+   
     
    @Override
     public void initialize(URL url, ResourceBundle rb) {
+        if (listaRoles == null) {
         listaRoles = FXCollections.observableArrayList();
-        listRolesExistentes.setItems(listaRoles);
+        }
         
-    } 
+        if (listaRoles.isEmpty()){ listaRoles.addAll(
+        new GestionRoles("Administrador"),
+        new GestionRoles("Tecnico"),
+        new GestionRoles("Usuario")
+        );     
+    }
+        listRolesExistentes.setItems(listaRoles);
+       
+        
+        
+        
+        GestionDePermisosControlador.getListaPermisos();
+        ObservableList<GestionPermisos> permisos = GestionDePermisosControlador.getListaPermisos();
+        if (permisos == null || permisos.isEmpty()) {
+            System.out.println("Error: La lista de permisos está vacía o no inicializada.");
+            return;
+        }
+        listPermisosExistentes.setItems(permisos); // Vincular permisos con la nueva ListView 
+    }
+     
     
     public void CrearRol(ActionEvent event){
         String nombreRol = textNombreRol.getText();
@@ -74,23 +96,6 @@ public class GestionDeRolesControlador implements Initializable {
         listRolesExistentes.setItems(listaRoles);
     }
     
-    
-    
-    /* @FXML
-    public void ingresarNombreRol(){
-        String nombreRol = textNombreRol.getText() ;
-        
-    if (nombreRol == null || nombreRol.isEmpty()) {
-        labelError.setText("Error: El nombre de la empresa no puede estar vacio.");
-        return;
-    } 
-    if (nombreRol.length() < 3 || nombreRol.length() > 50) {
-        labelError.setText("Error: El nombre de la empresa debe tener entre 3 y 50caracteres");
-        return;
-    } 
-        gestionRol.setNombreRol(nombreRol);
-        textNombreRol.setText(nombreRol);
-    }*/
     
     
         @FXML

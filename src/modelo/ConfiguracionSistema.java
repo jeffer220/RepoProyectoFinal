@@ -12,20 +12,19 @@ package modelo;
  */
 public class ConfiguracionSistema {
     private String nombreEmpresa;
-    private String logoEmpresa;
     private String idiomaPredeterminado;
     private String zonaHoraria;
-    private int tiempoVencimientoTickets;
-    private String[] nivelesPrioridad;
+    private String rutaLogo;
+    //private int tiempoVencimientoTickets;
+    //private String[] nivelesPrioridad;
     
+    public ConfiguracionSistema(){}
 
-    public ConfiguracionSistema(String nombreEmpresa, String logoEmpresa, String idiomaPredeterminado, String zonaHoraria, int tiempoVencimientoTickets, String[] nivelesPrioridad) {
+    public ConfiguracionSistema(String nombreEmpresa, String idiomaPredeterminado, String rutaLogo) {
         this.nombreEmpresa = nombreEmpresa;
-        this.logoEmpresa = logoEmpresa;
         this.idiomaPredeterminado = idiomaPredeterminado;
-        this.zonaHoraria = zonaHoraria;
-        this.tiempoVencimientoTickets = tiempoVencimientoTickets;
-        this.nivelesPrioridad = nivelesPrioridad;
+        this.rutaLogo = rutaLogo;
+        
     }
     
     public String getNombreEmpresa() {
@@ -34,14 +33,6 @@ public class ConfiguracionSistema {
 
     public void setNombreEmpresa(String nombreEmpresa) {
         this.nombreEmpresa = nombreEmpresa;
-    }
-
-    public String getLogoEmpresa() {
-        return logoEmpresa;
-    }
-
-    public void setLogoEmpresa(String logoEmpresa) {
-        this.logoEmpresa = logoEmpresa;
     }
 
     public String getIdiomaPredeterminado() {
@@ -60,21 +51,13 @@ public class ConfiguracionSistema {
         this.zonaHoraria = zonaHoraria;
     }
 
-    public int getTiempoVencimientoTickets() {
-        return tiempoVencimientoTickets;
+    public String getRutaLogo() {
+        return rutaLogo;
     }
 
-    public void setTiempoVencimientoTickets(int tiempoVencimientoTickets) {
-        this.tiempoVencimientoTickets = tiempoVencimientoTickets;
+    public void setRutaLogo(String rutaLogo) {
+        this.rutaLogo = rutaLogo;
     }
-
-    public String[] getNivelesPrioridad() {
-        return nivelesPrioridad;
-    }
-
-    public void setNivelesPrioridad(String[] nivelesPrioridad) {
-        this.nivelesPrioridad = nivelesPrioridad;
-    }
-    
+ 
     
 }

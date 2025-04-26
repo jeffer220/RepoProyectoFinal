@@ -37,6 +37,8 @@ public class ModificarRolControlador implements Initializable {
     private TextField textDescRolNuevo;
     @FXML
     private Button buttonGuardar;
+    @FXML
+    private ListView listaAsignacionTickets;
     
 
     @FXML

@@ -8,17 +8,20 @@ package modelo;
  *
  * @author gp
  */
-public class RegistroDeUsuarios {
-    private String nombreCompleto;
-    private String correoElectronico;
-    private String nombreUsuario;
-    private String contraseña;
+public class Persona {
+   private String nombreCompleto;
+   private String correoElectronico;
+   private String nombreUsuario;
+   private String contraseña;
+   private String rolAsignado;
 
-    public RegistroDeUsuarios(String nombreCompleto, String correoElectronico, String nombreUsuario, String contraseña) {
+    public Persona(String nombreCompleto, String correoElectronico, String nombreUsuario, String contraseña, String rolAsignado) {
         this.nombreCompleto = nombreCompleto;
         this.correoElectronico = correoElectronico;
         this.nombreUsuario = nombreUsuario;
         this.contraseña = contraseña;
+        this.rolAsignado = rolAsignado;
+       
     }
 
     public String getNombreCompleto() {
@@ -52,6 +55,14 @@ public class RegistroDeUsuarios {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    
-    
+
+    public String getRolAsignado() {
+        return rolAsignado;
+    }
+
+    public void setRolAsignado(String rolAsignado) {
+        this.rolAsignado = rolAsignado;
+    }
+   
+   
 }

@@ -9,6 +9,7 @@ package modelo;
  * @author gp
  */
 public class GestionPermisos {
+    
     private String nombrePermiso;
     private String descripcionPermiso;
 

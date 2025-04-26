@@ -17,6 +17,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -36,7 +37,7 @@ public class RegistrarNuevoUsuarioControlador implements Initializable {
     @FXML
     private TextField textContraseña;
     @FXML
-    private TextField textRol;
+    private ComboBox ComboRoles;
     @FXML
     private TextField textDepartamento;
     @FXML
