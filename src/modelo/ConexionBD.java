@@ -7,7 +7,7 @@ package modelo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-
+/*
 public class ConexionBD {
     private static final String URL = "jdbc:postgresql://ep-plain-scene-a4jbvjto-pooler.us-east-1.aws.neon.tech:5432/bd_proyectoProgramacion?sslmode=require";
     private static final String USUARIO = "neondb_owner";
@@ -24,4 +24,4 @@ public class ConexionBD {
         }
         return conexion;
     }
-}
+}*/
