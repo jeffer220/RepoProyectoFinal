@@ -23,6 +23,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import modelo.GestionDepartamentoDAO;
 import modelo.GestionDepartamentos;
 
 /**
@@ -34,7 +35,7 @@ public class GestionDepartamentosControlador implements Initializable {
     
     
     @FXML
-    private ListView listDepartamentosExistentes;
+    private ListView<GestionDepartamentos> listDepartamentosExistentes;
     @FXML
     private Button buttonRegrear;
     @FXML
@@ -47,16 +48,24 @@ public class GestionDepartamentosControlador implements Initializable {
     private ListView listaTecnicosDisponibles;
     @FXML
     private Label labelError;
+    @FXML
+    private Button btnGuardar;
+    @FXML
+    private Button buttonEliminarDepartamento;
     
-    private ObservableList<GestionDepartamentos> listaDepartamentos;
+    
+    private static ObservableList<GestionDepartamentos> listaDepartamentos;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         listaDepartamentos = FXCollections.observableArrayList();
         listDepartamentosExistentes.setItems(listaDepartamentos);
+        
+        listaDepartamentos = GestionDepartamentoDAO.obtenerDepartamentos();
+        listDepartamentosExistentes.setItems(listaDepartamentos);
     }
     
-    @FXML
+   @FXML
     public void crearDepartamentos (ActionEvent event){
         String nombreDepartamento = textNombreDepartamento.getText();
         String descDepartamento = textDescripcionDepartamento.getText();
@@ -68,7 +77,53 @@ public class GestionDepartamentosControlador implements Initializable {
         GestionDepartamentos gestion = new GestionDepartamentos(nombreDepartamento, descDepartamento);
         listaDepartamentos.add(gestion);
         listDepartamentosExistentes.setItems(listaDepartamentos);
-    }    
+    }   
+    
+  @FXML
+public void guardarConfiguraciones(ActionEvent event) {
+    String nombreDepartamento = textNombreDepartamento.getText();
+    String descDepartamento = textDescripcionDepartamento.getText();
+
+    if (nombreDepartamento == null || nombreDepartamento.isEmpty() || nombreDepartamento.length() < 3 || nombreDepartamento.length() > 50) {
+        labelError.setText("Error: ingrese un nombre válido.");
+        return;
+    }
+
+    GestionDepartamentos gestion = new GestionDepartamentos(nombreDepartamento, descDepartamento);
+    
+    // Guardar en la base de datos
+    boolean guardado = GestionDepartamentoDAO.guardarDepartamento(gestion);
+
+    if (guardado) {
+        listaDepartamentos.add(gestion);  // Agregarlo también a la lista en la interfaz
+        listDepartamentosExistentes.setItems(listaDepartamentos);
+        labelError.setText("Departamento guardado correctamente.");
+    } else {
+        labelError.setText("Error al guardar el departamento en la base de datos.");
+    }
+}
+
+    @FXML
+public void eliminarDepartamento(ActionEvent event) {
+    GestionDepartamentos seleccionado = listDepartamentosExistentes.getSelectionModel().getSelectedItem();
+
+    if (seleccionado == null) {
+        labelError.setText("Seleccione un departamento para eliminar.");
+        return;
+    }
+
+    boolean eliminado = GestionDepartamentoDAO.eliminarDepartamento(seleccionado.getNombreDepartamento());
+
+    if (eliminado) {
+        listaDepartamentos.remove(seleccionado);  // También elimi narlo de la lista en la interfaz
+        labelError.setText("Departamento eliminado correctamente.");
+    } else {
+        labelError.setText("Error al eliminar el departamento.");
+    }
+}
+
+    
+    
     
     
     @FXML
@@ -84,6 +139,12 @@ public class GestionDepartamentosControlador implements Initializable {
             Logger.getLogger(GestionDepartamentosControlador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public static ObservableList<GestionDepartamentos> getListaDepartamentos() {
+        return listaDepartamentos;
+    }
+
+   
     
     
     

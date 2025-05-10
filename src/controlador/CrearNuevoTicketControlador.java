@@ -21,7 +21,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+import modelo.GestionDepartamentos;
+import controlador.GestionDepartamentosControlador;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ComboBox;
+import modelo.GestionDepartamentoDAO;
+import modelo.crearTicketDAO;
 /**
  * FXML Controller class
  *
@@ -34,7 +39,7 @@ public class CrearNuevoTicketControlador implements Initializable {
     @FXML
     private TextField textDescTicket;
     @FXML
-    private ListView listaDepartamentoAsignadoTicket;
+    private ComboBox<GestionDepartamentos> comboDepartamentos;
     @FXML
     private ListView listaNivelPrioridadTicket;
     @FXML
@@ -42,7 +47,46 @@ public class CrearNuevoTicketControlador implements Initializable {
     @FXML
     private Button buttonCancelar;
     
+        @Override
+    public void initialize(URL url, ResourceBundle rb) {
+        ObservableList<GestionDepartamentos> listaDepartamentos = GestionDepartamentoDAO.obtenerDepartamentos();
+        comboDepartamentos.setItems(listaDepartamentos);
+        
+     
+    }
+    
+    @FXML
+public void crearTicket(ActionEvent event) {
+    String titulo = textTituloTicket.getText();
+    String descripcion = textDescTicket.getText();
+    GestionDepartamentos departamentoSeleccionado = comboDepartamentos.getSelectionModel().getSelectedItem();
 
+    if (titulo == null || titulo.isEmpty()) {
+        System.out.println("Error: El título no puede estar vacío.");
+        return;
+    }
+
+    if (descripcion == null || descripcion.isEmpty()) {
+        System.out.println("Error: La descripción no puede estar vacía.");
+        return;
+    }
+
+    if (departamentoSeleccionado == null) {
+        System.out.println("Error: Debe seleccionar un departamento.");
+        return;
+    }
+
+    // Guardar el ticket en la base de datos
+    boolean guardado = crearTicketDAO.guardarTicket(titulo, descripcion, departamentoSeleccionado.getNombreDepartamento());
+
+    if (guardado) {
+        System.out.println("Ticket creado con éxito.");
+    } else {
+        System.out.println("Error al crear el ticket.");
+    }
+}
+
+    
     @FXML
     private void handleBtnCancelar(ActionEvent event) {
         try {
@@ -57,9 +101,6 @@ public class CrearNuevoTicketControlador implements Initializable {
         }
     }
     
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+    
     
 }

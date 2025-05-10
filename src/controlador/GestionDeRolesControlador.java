@@ -26,6 +26,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import modelo.GestionPermisos;
 import modelo.GestionRoles;
+import modelo.GestionRolesDAO;
 
 /**
  * FXML Controller class
@@ -37,7 +38,7 @@ public class GestionDeRolesControlador implements Initializable {
     
 
     @FXML
-    private ListView listRolesExistentes;
+    private ListView<GestionRoles> listRolesExistentes;
     @FXML
     private Button buttonModRol;
     @FXML
@@ -64,18 +65,13 @@ public class GestionDeRolesControlador implements Initializable {
         if (listaRoles == null) {
         listaRoles = FXCollections.observableArrayList();
         }
-        
-        if (listaRoles.isEmpty()){ listaRoles.addAll(
-        new GestionRoles("Administrador"),
-        new GestionRoles("Tecnico"),
-        new GestionRoles("Usuario")
-        );     
-    }
         listRolesExistentes.setItems(listaRoles);
        
+    // Recupera la lista de roles que ya están guardados en la BD.
+    listaRoles = GestionRolesDAO.obtenerRoles();
+    listRolesExistentes.setItems(listaRoles);
         
-        
-        
+        //Visualizar elemtos de la lista de permisos creada
         GestionDePermisosControlador.getListaPermisos();
         ObservableList<GestionPermisos> permisos = GestionDePermisosControlador.getListaPermisos();
         if (permisos == null || permisos.isEmpty()) {
@@ -84,19 +80,35 @@ public class GestionDeRolesControlador implements Initializable {
         }
         listPermisosExistentes.setItems(permisos); // Vincular permisos con la nueva ListView 
     }
-     
     
-    public void CrearRol(ActionEvent event){
-        String nombreRol = textNombreRol.getText();
-        if (nombreRol == null || nombreRol.isEmpty() || nombreRol.length() < 3 || nombreRol.length() > 50 ){
-        labelError.setText("Error ingrese un nuevo nombre");
-        }
-        GestionRoles rol = new GestionRoles(nombreRol);
-        listaRoles.add(rol);
-        listRolesExistentes.setItems(listaRoles);
+    
+    @FXML
+public void CrearRol(ActionEvent event) {
+    String nombreRol = textNombreRol.getText();
+
+    if (nombreRol == null || nombreRol.isEmpty() || nombreRol.length() < 3 || nombreRol.length() > 50) {
+        labelError.setText("Error: Ingrese un nombre válido.");
+        return;
     }
+
+    // Creamos un nuevo rol
+    GestionRoles nuevoRol = new GestionRoles(nombreRol);
+
+    // Guardamos el rol en la base de datos
+    boolean guardado = GestionRolesDAO.guardarRol(nuevoRol);
+
+    if (guardado) {
+        // Se asignó el ID en el método guardarRol().
+        listaRoles.add(nuevoRol); // Se agrega a la lista en memoria
+        listRolesExistentes.setItems(listaRoles);
+        labelError.setText("Rol guardado correctamente.");
+    } else {
+        labelError.setText("Error al guardar el rol en la base de datos.");
+    }
+}
+
     
-    
+      
     
         @FXML
     private void handlebtnRegresar(ActionEvent event) {
@@ -126,19 +138,29 @@ public class GestionDeRolesControlador implements Initializable {
         }
     }
     
-        @FXML
-    private void handleBTNEliminarRol(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vista/EliminarRolVista.fxml"));
-            Parent root = loader.load();
-            
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(GestionDeRolesControlador.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    
+    @FXML
+public void handleBTNEliminarRol(ActionEvent event) {
+    // Se obtiene el rol seleccionado en la interfaz
+    GestionRoles rolSeleccionado = listRolesExistentes.getSelectionModel().getSelectedItem();
+    
+    if (rolSeleccionado == null) {
+        labelError.setText("Seleccione un rol para borrar.");
+        return;
     }
+    
+    // Llamamos al método del DAO pasándole el ID del rol seleccionado
+    boolean borrado = GestionRolesDAO.borrarRol(rolSeleccionado.getId());
+    
+    if (borrado) {
+        // Si se borró en la BD, también se quita de la lista en memoria y se actualiza el ListView
+        listaRoles.remove(rolSeleccionado);
+        listRolesExistentes.setItems(listaRoles);
+        labelError.setText("Rol borrado correctamente.");
+    } else {
+        labelError.setText("Error al borrar el rol en la base de datos.");
+    }
+}
        
     
 }

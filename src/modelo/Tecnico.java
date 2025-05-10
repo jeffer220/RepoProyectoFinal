@@ -11,8 +11,8 @@ package modelo;
 public class Tecnico extends Persona {
     private String departamento;
     
-    public Tecnico(String nombreCompleto, String correoElectronico, String nombreUsuario, String contraseña, String rolAsignado, String departamento) {
-        super(nombreCompleto, correoElectronico, nombreUsuario, contraseña, rolAsignado);
+    public Tecnico(String nombreCompleto, String correoElectronico, String nombreUsuario, String contraseña, String departamento) {
+        super(nombreCompleto, correoElectronico, nombreUsuario, contraseña);
         this.departamento = departamento;
     }
 

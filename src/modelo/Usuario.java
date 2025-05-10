@@ -10,11 +10,12 @@ package modelo;
  */
 public class Usuario extends Persona {
     
-    public Usuario(String nombreCompleto, String correoElectronico, String nombreUsuario, String contraseña, String rolAsignado) {
-        super(nombreCompleto, correoElectronico, nombreUsuario, contraseña, rolAsignado);
+    public Usuario(String nombreCompleto, String correoElectronico, String nombreUsuario, String contraseña) {
+        super(nombreCompleto, correoElectronico, nombreUsuario, contraseña);
     }
     
+    public Usuario(){}
 
     
-    
+   
 }

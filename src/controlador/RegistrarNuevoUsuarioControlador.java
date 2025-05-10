@@ -9,6 +9,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,8 +20,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import modelo.Usuario;
 
 /**
  * FXML Controller class
@@ -44,13 +48,33 @@ public class RegistrarNuevoUsuarioControlador implements Initializable {
     private Button buttonGuardar;
     @FXML
     private Button buttonCrearUsuario;
+    @FXML
+    private ListView listaUsuarios;
+    
+    private static ObservableList<Usuario> usuarios;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //
+        usuarios = FXCollections.observableArrayList();
+        listaUsuarios.setItems(usuarios);
     }
     
-      
+    
+    @FXML
+    public void crearUsuarios (ActionEvent event){
+        String nombreCompleto = textNombreCompleto.getText(); 
+        String correoElectronico = textCorreo.getText();
+        String nombreUsuario = textNombreUsuario.getText();
+        String contraseña = textContraseña.getText();
+        
+        if (nombreCompleto == null || nombreCompleto.isEmpty()){
+            System.out.println("Error ingrese un nombre");
+        }
+        
+         Usuario usua = new Usuario(nombreCompleto, correoElectronico, nombreUsuario, contraseña);
+        usuarios.add(usua);
+        listaUsuarios.setItems(usuarios); // Actualizar la vista
+    }      
     
     @FXML
     private void handleBtnRegresar(ActionEvent event) {
@@ -65,5 +89,5 @@ public class RegistrarNuevoUsuarioControlador implements Initializable {
             Logger.getLogger(RegistrarNuevoUsuarioControlador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }    
-    
+
 }

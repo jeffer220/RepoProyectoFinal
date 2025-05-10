@@ -21,7 +21,7 @@
       <Button fx:id="buttonGuardar" layoutX="482.0" layoutY="485.0" mnemonicParsing="false" text="Guardar" />
       <Button fx:id="buttonCancelar" layoutX="561.0" layoutY="485.0" mnemonicParsing="false" onAction="#handlebtnRegresar" text="Cancelar" />
       <Button fx:id="buttonModRol" layoutX="29.0" layoutY="472.0" mnemonicParsing="false" onAction="#handleBTNModificarRol" text="Modificar Rol" />
-      <Button fx:id="buttonEliminarRol" layoutX="128.0" layoutY="472.0" mnemonicParsing="false" onAction="#handleBTNEliminarRol" text="Eliminar Rol" />
+      <Button fx:id="buttonEliminarRol" layoutX="128.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleBTNEliminarRol" text="Eliminar Rol" />
       <Label layoutX="29.0" layoutY="309.0" prefHeight="17.0" prefWidth="120.0" text="Nombre del Rol">
          <font>
             <Font size="16.0" />

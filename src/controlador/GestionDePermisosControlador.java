@@ -24,6 +24,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import modelo.GestionPermisos;
+import modelo.GestionPermisosDAO;
 
 /**
  * FXML Controller class
@@ -56,46 +57,42 @@ public class GestionDePermisosControlador implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         if (listaPermisos == null) { // Si la lista es null, inicializarla
         listaPermisos = FXCollections.observableArrayList();
+        
+        listaPermisos = GestionPermisosDAO.obtenerPermisos();
+        listaPermisosExistentes.setItems(listaPermisos);  // Vincular la lista con el ListView
     }
-       
-       if (listaPermisos.isEmpty()) { listaPermisos.addAll(
-        new GestionPermisos("Crear tickets", "Permiso para crear nuevos tickets"),
-        new GestionPermisos("Ver tickets", "Permiso para visualizar tickets"),
-        new GestionPermisos("Editar tickets", "Permiso para modificar detalles de tickets"),
-        new GestionPermisos("Eliminar tickets", "Permiso para borrar tickets"),
-        new GestionPermisos("Asignar tickets", "Permiso para asignar tickets a usuarios"),
-        new GestionPermisos("Cambiar estado de tickets", "Permiso para modificar el estado de tickets"),
-        new GestionPermisos("Agregar notas a tickets", "Permiso para incluir comentarios en tickets"),
-        new GestionPermisos("Gestionar usuarios", "Permiso para administrar cuentas de usuario"),
-        new GestionPermisos("Gestionar departamentos", "Permiso para organizar departamentos"),
-        new GestionPermisos("Gestionar flujos de trabajo", "Permiso para configurar flujos de trabajo"),
-        new GestionPermisos("Configurar parámetros del sistema", "Permiso para ajustar configuraciones")
-    );
-       }
-       listaPermisosExistentes.setItems(listaPermisos); // Vincular la lista con el ListView
+ 
     }
     
      // Método público para acceder a la lista desde otro controlador
     public static ObservableList<GestionPermisos> getListaPermisos() {
         return listaPermisos;
-    }  
+    } 
     
     @FXML
-    public void CrearPermiso(ActionEvent event){
-        String nombrePermiso = textNombrePermiso.getText();
-        String descripcionPermiso = textDescPermiso.getText();
-        
-        if (nombrePermiso == null || nombrePermiso.isEmpty() || nombrePermiso.length() < 3 || nombrePermiso.length() > 50) {
-        labelError.setText(" aaah Error");
-        return;
-    }   
-        GestionPermisos permiso1 = new GestionPermisos(nombrePermiso, descripcionPermiso);
-        listaPermisos.add(permiso1);
-        listaPermisosExistentes.setItems(listaPermisos); // Actualizar la vista
+public void CrearPermiso(ActionEvent event){
+    String nombrePermiso = textNombrePermiso.getText();
+    String descripcionPermiso = textDescPermiso.getText();
 
+    if (nombrePermiso == null || nombrePermiso.isEmpty() || nombrePermiso.length() < 3 || nombrePermiso.length() > 50) {
+        labelError.setText("Error: Ingrese un nombre válido.");
+        return;
     }
-        
-    
+
+    GestionPermisos nuevoPermiso = new GestionPermisos(nombrePermiso, descripcionPermiso);
+
+    // Guardar el permiso en la base de datos
+    boolean guardado = GestionPermisosDAO.guardarPermiso(nuevoPermiso);
+
+    if (guardado) {
+        listaPermisos.add(nuevoPermiso); // También agregarlo a la lista en la interfaz
+        listaPermisosExistentes.setItems(listaPermisos);
+        labelError.setText("Permiso guardado correctamente.");
+    } else {
+        labelError.setText("Error al guardar el permiso en la base de datos.");
+    }
+}
+
   
     
         @FXML

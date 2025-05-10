@@ -10,8 +10,8 @@ package modelo;
  */
 public class Administrador extends Persona {
     
-    public Administrador(String nombreCompleto, String correoElectronico, String nombreUsuario, String contraseña, String rolAsignado) {
-        super(nombreCompleto, correoElectronico, nombreUsuario, contraseña, rolAsignado);
+    public Administrador(String nombreCompleto, String correoElectronico, String nombreUsuario, String contraseña) {
+        super(nombreCompleto, correoElectronico, nombreUsuario, contraseña);
     }
     
 

@@ -13,16 +13,18 @@ public class Persona {
    private String correoElectronico;
    private String nombreUsuario;
    private String contraseña;
-   private String rolAsignado;
+   
 
-    public Persona(String nombreCompleto, String correoElectronico, String nombreUsuario, String contraseña, String rolAsignado) {
+    public Persona(String nombreCompleto, String correoElectronico, String nombreUsuario, String contraseña) {
         this.nombreCompleto = nombreCompleto;
         this.correoElectronico = correoElectronico;
         this.nombreUsuario = nombreUsuario;
         this.contraseña = contraseña;
-        this.rolAsignado = rolAsignado;
+    
        
     }
+    
+    public Persona (){}
 
     public String getNombreCompleto() {
         return nombreCompleto;
@@ -56,13 +58,8 @@ public class Persona {
         this.contraseña = contraseña;
     }
 
-    public String getRolAsignado() {
-        return rolAsignado;
+           @Override
+    public String toString() {
+        return nombreCompleto + " - " + correoElectronico + " - " + nombreUsuario + " - " + contraseña; // Esto mostrará el nombre y descripción en el ListView
     }
-
-    public void setRolAsignado(String rolAsignado) {
-        this.rolAsignado = rolAsignado;
-    }
-   
-   
 }
