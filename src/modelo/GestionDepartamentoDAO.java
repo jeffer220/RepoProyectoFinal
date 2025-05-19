@@ -71,7 +71,7 @@ public class GestionDepartamentoDAO {
 
         int filasAfectadas = ps.executeUpdate();
         ps.close();
-        conexion.close();
+       // conexion.close();
 
         return filasAfectadas > 0;  // Retorna true si la eliminación fue exitosa
     } catch (SQLException e) {

@@ -67,7 +67,7 @@ public class GestionDeRolesControlador implements Initializable {
         }
         listRolesExistentes.setItems(listaRoles);
        
-    // Recupera la lista de roles que ya están guardados en la BD.
+    // Recupera la lista de roles que ya están guardados en la BD
     listaRoles = GestionRolesDAO.obtenerRoles();
     listRolesExistentes.setItems(listaRoles);
         
@@ -150,7 +150,7 @@ public void handleBTNEliminarRol(ActionEvent event) {
     }
     
     // Llamamos al método del DAO pasándole el ID del rol seleccionado
-    boolean borrado = GestionRolesDAO.borrarRol(rolSeleccionado.getId());
+    boolean borrado = GestionRolesDAO.borrarRol(rolSeleccionado.getNombreRol());
     
     if (borrado) {
         // Si se borró en la BD, también se quita de la lista en memoria y se actualiza el ListView

@@ -32,7 +32,7 @@ public class ConfiguracionSistemaDAO {
             
             int filasAfectadas = ps.executeUpdate();
             ps.close();
-            conexion.close();
+           // conexion.close();
             
             return filasAfectadas > 0;
         } catch (SQLException e) {

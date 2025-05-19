@@ -30,7 +30,7 @@ public class GestionRolesDAO {
         }
         rs.close();
         ps.close();
-        conexion.close();
+        //conexion.close();
 
         return true;
     } catch (SQLException e) {
@@ -57,7 +57,7 @@ public class GestionRolesDAO {
 
         rs.close();
         ps.close();
-        conexion.close();
+        //conexion.close();
     } catch (SQLException e) {
         System.out.println("Error al obtener los roles: " + e.getMessage());
     }
@@ -66,17 +66,17 @@ public class GestionRolesDAO {
 }
 
     
- public static boolean borrarRol(int idRol) {
+ public static boolean borrarRol(String nombre) {
     Connection conexion = ConexionBD.conectar();
-    String sql = "DELETE FROM tb_roles WHERE id_rol = ?";
+    String sql = "DELETE FROM tb_roles WHERE nombre = ?";
 
 
     try {
         PreparedStatement ps = conexion.prepareStatement(sql);
-        ps.setInt(1, idRol);
+        ps.setString(1, nombre);
         int filasAfectadas = ps.executeUpdate();
         ps.close();
-        conexion.close();
+        //conexion.close();
         return filasAfectadas > 0;
     } catch (SQLException e) {
         System.out.println("Error al borrar el rol: " + e.getMessage());
@@ -110,7 +110,6 @@ public class GestionRolesDAO {
 
     return lista;
 } */
-
     
 }
 

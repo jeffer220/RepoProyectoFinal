@@ -51,7 +51,7 @@ public class GestionPermisosDAO {
 
         rs.close();
         ps.close();
-        conexion.close();
+        //conexion.close();
     } catch (SQLException e) {
         System.out.println("Error al obtener los permisos: " + e.getMessage());
     }
