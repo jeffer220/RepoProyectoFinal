@@ -36,9 +36,10 @@ public class ConexionBD {
     // Método estático que retorna la conexión única
     public static Connection conectar() {
         if (conn == null) {
-            new ConexionBD();
+            ConexionBD conexion = new ConexionBD();
+            return conexion.conn;
         }
-        return conn;
+        else{ return conn;}
     }
 }
 
