@@ -13,7 +13,8 @@ import java.util.logging.Logger;
 
 public class ConexionBD {
     // URL de conexión original con puerto, base de datos y parámetro sslmode
-    private String url = "jdbc:postgresql://ep-plain-scene-a4jbvjto-pooler.us-east-1.aws.neon.tech:5432/bd_proyectoProgramacion";
+    private String url = "jdbc:postgresql://ep-plain-scene-a4jbvjto-pooler.us-east-1.aws.neon.tech/bd_proyectoProgramacion";
+    //jdbc:postgresql://ep-plain-scene-a4jbvjto-pooler.us-east-1.aws.neon.tech:5432/bd_proyectoProgramacion?sslmode=require
     private Properties properties = new Properties();
     private static Connection conn = null;
     
