@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.GestionDePermisosControlador">
+<AnchorPane id="AnchorPane" prefHeight="518.0" prefWidth="600.0" style="-fx-background-color: #d4efdf;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.GestionDePermisosControlador">
    <children>
       <Label layoutX="232.0" layoutY="14.0" text="Gestion De Permisos">
          <font>
@@ -15,8 +15,8 @@
          </font>
       </Label>
       <Label layoutX="248.0" layoutY="49.0" text="Permisos Existentes" />
-      <ListView fx:id="listaPermisosExistentes" layoutX="119.0" layoutY="72.0" prefHeight="122.0" prefWidth="363.0" />
-      <Button fx:id="buttonRegresar" layoutX="523.0" layoutY="467.0" mnemonicParsing="false" onAction="#handlebtnRegresar" text="Regresar" />
+      <ListView fx:id="listaPermisosExistentes" layoutX="119.0" layoutY="72.0" prefHeight="122.0" prefWidth="363.0" style="-fx-background-color: #ebf5fb;" />
+      <Button fx:id="buttonRegresar" layoutX="523.0" layoutY="467.0" mnemonicParsing="false" onAction="#handlebtnRegresar" style="-fx-background-color: #aed6f1;" text="Regresar" />
       
             <Label layoutX="44.0" layoutY="317.0" prefHeight="17.0" prefWidth="151.0" text="Nombre del Permiso">
          <font>
@@ -29,9 +29,9 @@
          </font>
       </Label>
       <Label fx:id="labelError" textFill="red" />
-      <TextField fx:id="textNombrePermiso" layoutX="232.0" layoutY="317.0" prefHeight="25.0" prefWidth="170.0" />
-      <TextField fx:id="textDescPermiso" layoutX="232.0" layoutY="382.0" prefHeight="72.0" prefWidth="188.0" />
-      <Button fx:id="buttonCrearPermiso" layoutX="281.0" layoutY="479.0" mnemonicParsing="false" onAction="#CrearPermiso" text="Crear Permiso" />
-      <Button fx:id="buttonGuardar" layoutX="456.0" layoutY="467.0" mnemonicParsing="false" text="Guardar" />
+      <TextField fx:id="textNombrePermiso" layoutX="232.0" layoutY="317.0" prefHeight="25.0" prefWidth="170.0" style="-fx-background-color: #ebf5fb;" />
+      <TextField fx:id="textDescPermiso" layoutX="232.0" layoutY="382.0" prefHeight="72.0" prefWidth="188.0" style="-fx-background-color: #ebf5fb;" />
+      <Button fx:id="buttonCrearPermiso" layoutX="281.0" layoutY="479.0" mnemonicParsing="false" onAction="#CrearPermiso" style="-fx-background-color: #aed6f1;" text="Crear Permiso" />
+      <Button fx:id="buttonGuardar" layoutX="456.0" layoutY="467.0" mnemonicParsing="false" style="-fx-background-color: #aed6f1;" text="Guardar" />
    </children>
 </AnchorPane>

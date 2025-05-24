@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="748.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.GestionDepartamentosControlador">
+<AnchorPane id="AnchorPane" prefHeight="497.0" prefWidth="748.0" style="-fx-background-color: #f9e79f;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.GestionDepartamentosControlador">
    <children>
       <Label layoutX="205.0" layoutY="14.0" text="Gestion de Departamentos">
          <font>
@@ -16,7 +16,7 @@
       </Label>
       <Label layoutX="231.0" layoutY="54.0" text="Departamentos Existentes" />
       <ListView fx:id="listDepartamentosExistentes" layoutX="179.0" layoutY="77.0" prefHeight="144.0" prefWidth="242.0" />
-      <Button fx:id="buttonRegrear" layoutX="671.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleBotonRegresar" text="Regresar" />
+      <Button fx:id="buttonRegrear" layoutX="671.0" layoutY="453.0" mnemonicParsing="false" onAction="#handleBotonRegresar" style="-fx-background-color: #fbeee6;" text="Regresar" />
       <Label layoutX="232.0" layoutY="244.0" text="Crear Departamento">
          <font>
             <Font size="15.0" />
@@ -24,14 +24,14 @@
       </Label>
       <Label layoutX="64.0" layoutY="287.0" text="Nombre Del Departamento" />
       <Label layoutX="322.0" layoutY="287.0" text="Descripcion" />
-      <Button fx:id="buttonCrearDepartamento" layoutX="268.0" layoutY="453.0" mnemonicParsing="false" onAction="#crearDepartamentos" text="Crear Departamento" />
+      <Button fx:id="buttonCrearDepartamento" layoutX="268.0" layoutY="453.0" mnemonicParsing="false" onAction="#crearDepartamentos" style="-fx-background-color: #fbeee6;" text="Crear Departamento" />
       <Label layoutX="81.0" layoutY="363.0" text="Tecnicos Disponibles" />
       <ListView fx:id="listaTecnicosDisponibles" layoutX="15.0" layoutY="385.0" prefHeight="93.0" prefWidth="242.0" />
       <TextField fx:id="textNombreDepartamento" layoutX="42.0" layoutY="311.0" prefHeight="21.0" prefWidth="190.0" />
       <TextField fx:id="textDescripcionDepartamento" layoutX="268.0" layoutY="311.0" prefHeight="79.0" prefWidth="171.0" />
       <Label fx:id="labelError" textFill="red" />
-      <Button fx:id="btnGuardar" layoutX="604.0" layoutY="453.0" mnemonicParsing="false" onAction="#guardarConfiguraciones" text="Guardar" />
-      <Button fx:id="buttonEliminarDepartamento" layoutX="403.0" layoutY="453.0" onAction="#eliminarDepartamento" text="Eliminar Departamento" />
+      <Button fx:id="btnGuardar" layoutX="604.0" layoutY="453.0" mnemonicParsing="false" onAction="#guardarConfiguraciones" style="-fx-background-color: #fbeee6;" text="Guardar" />
+      <Button fx:id="buttonEliminarDepartamento" layoutX="403.0" layoutY="453.0" onAction="#eliminarDepartamento" style="-fx-background-color: #fbeee6;" text="Eliminar Departamento" />
 
    </children>
 </AnchorPane>

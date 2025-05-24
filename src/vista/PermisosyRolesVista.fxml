@@ -4,11 +4,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="295.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.PermisosyRolesControlador">
+<AnchorPane id="AnchorPane" prefHeight="295.0" prefWidth="600.0" style="-fx-background-color: #d6eaf8;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.PermisosyRolesControlador">
    <children>
       <Label layoutX="186.0" layoutY="4.0" prefHeight="20.0" prefWidth="229.0" text="           Gestion de Permisos y Roles" textAlignment="CENTER" />
-      <Button layoutX="467.0" layoutY="227.0" mnemonicParsing="false" onAction="#handleBotonCancelar" text="Cancelar" />
-      <Button fx:id="buttonGestionPermisos" layoutX="237.0" layoutY="64.0" mnemonicParsing="false" onAction="#handleGestionPermisos" text="Gestion De Permisos" />
-      <Button fx:id="buttonGestionRoles" layoutX="247.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleGestionRoles" text="Gestion De Roles" />
+      <Button layoutX="467.0" layoutY="227.0" mnemonicParsing="false" onAction="#handleBotonCancelar" style="-fx-background-color: #fae5d3;" text="Cancelar" />
+      <Button fx:id="buttonGestionPermisos" layoutX="237.0" layoutY="64.0" mnemonicParsing="false" onAction="#handleGestionPermisos" style="-fx-background-color: #fae5d3;" text="Gestion De Permisos" />
+      <Button fx:id="buttonGestionRoles" layoutX="247.0" layoutY="122.0" mnemonicParsing="false" onAction="#handleGestionRoles" style="-fx-background-color: #fae5d3;" text="Gestion De Roles" />
    </children>
 </AnchorPane>

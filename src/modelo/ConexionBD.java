@@ -7,10 +7,9 @@ package modelo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
+
+/*
 public class ConexionBD {
     // URL de conexión original con puerto, base de datos y parámetro sslmode
     private String url = "jdbc:postgresql://ep-plain-scene-a4jbvjto-pooler.us-east-1.aws.neon.tech/bd_proyectoProgramacion";
@@ -40,14 +39,12 @@ public class ConexionBD {
         }
         else{ return conn;}
     }
-}
+} */
 
 
 
-/*
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+
+
 
 public class ConexionBD {
     private static final String URL = "jdbc:postgresql://ep-plain-scene-a4jbvjto-pooler.us-east-1.aws.neon.tech:5432/bd_proyectoProgramacion?sslmode=require";
@@ -66,4 +63,3 @@ public class ConexionBD {
         return conexion;
     }
 }
-*/

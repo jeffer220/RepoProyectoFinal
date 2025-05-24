@@ -5,16 +5,16 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.GestionDeUsuariosControlador">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #fdebd0;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.GestionDeUsuariosControlador">
    <children>
       <Label layoutX="217.0" layoutY="14.0" prefHeight="17.0" prefWidth="166.0" text="Gestion De Usuarios">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="buttonRegistrarUsuario" layoutX="228.0" layoutY="71.0" mnemonicParsing="false" onAction="#handleRegistrarNuevoUsuario" text="Registrar Nuevo Usuario" />
-      <Button layoutX="504.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleBotonRegresar" text="Regresar" />
-      <Button fx:id="buttonModUsuario" layoutX="228.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleModificarUsuario" prefHeight="25.0" prefWidth="145.0" text="Modificar Usuarios" />
-      <Button fx:id="buttonDesactivarUsuarios" layoutX="228.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleDesactivarUsuarios" prefHeight="25.0" prefWidth="145.0" text="Desactivar Usuarios" />
+      <Button fx:id="buttonRegistrarUsuario" layoutX="228.0" layoutY="71.0" mnemonicParsing="false" onAction="#handleRegistrarNuevoUsuario" style="-fx-background-color: #edbb99;" text="Registrar Nuevo Usuario" textFill="#030000" />
+      <Button layoutX="504.0" layoutY="339.0" mnemonicParsing="false" onAction="#handleBotonRegresar" style="-fx-background-color: #e74c3c;" text="Regresar" textFill="#fcf9f9" />
+      <Button fx:id="buttonModUsuario" layoutX="228.0" layoutY="113.0" mnemonicParsing="false" onAction="#handleModificarUsuario" prefHeight="25.0" prefWidth="145.0" style="-fx-background-color: #edbb99;" text="Modificar Usuarios" />
+      <Button fx:id="buttonDesactivarUsuarios" layoutX="228.0" layoutY="155.0" mnemonicParsing="false" onAction="#handleDesactivarUsuarios" prefHeight="25.0" prefWidth="145.0" style="-fx-background-color: #edbb99;" text="Desactivar Usuarios" />
    </children>
 </AnchorPane>
