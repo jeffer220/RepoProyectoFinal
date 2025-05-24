@@ -18,7 +18,7 @@ public class ConexionBD {
     private Properties properties = new Properties();
     private static Connection conn = null;
     
-    // Constructor privado para implementar el patrón Singleton
+    // Constructor privado
     private ConexionBD() {
         properties.setProperty("user", "neondb_owner");
         properties.setProperty("password", "npg_9OM2VHoIZkpF");
