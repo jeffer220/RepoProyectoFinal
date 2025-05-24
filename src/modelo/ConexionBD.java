@@ -24,8 +24,6 @@ public class ConexionBD {
         properties.setProperty("password", "npg_9OM2VHoIZkpF");
         
         try {
-            // Cargar el driver de PostgreSQL (opcional en versiones modernas de JDBC)
-            // Class.forName("org.postgresql.Driver");
             
             conn = DriverManager.getConnection(url, properties);
             System.out.println("Conexión exitosa a PostgreSQL.");
